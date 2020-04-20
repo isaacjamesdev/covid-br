@@ -1,32 +1,48 @@
-import React from "react";
-import { Container, HorizontalLine } from "./HomeStyles";
+import React, { useState, useEffect } from "react";
+import { Container, HorizontalLine, Text, ContainerText } from "./HomeStyles";
+import { getAllStateBrazilData, getCountryData } from "../../API/covidApi";
+import { TYPES } from "../../constans/covidConsntants";
+import DropdownStates from "../../Components/Dropdown/Dropdown";
 import InfoCard from "../../Components/InfoCard/InfoCard";
-import Dropdown from "../../Components/Dropdown/Dropdown";
 
-const Home = ({ navigation }) => {
-  const dataBrasil = {
-    confirmados: 123,
-    curados: 432,
-    suspeitos: 43,
-    mortes: 666,
-  };
+const Home = ({ navigation, route }) => {
+  const [dataBrazil, setDataBrazil] = useState({});
+  const [dataStates, setDataStates] = useState([]);
+  const [selectedState, setSelectedState] = useState({});
+  const { Header } = route.params;
 
-  const dataCeara = {
-    confirmados: 23,
-    curados: 42,
-    suspeitos: 3,
-    mortes: 0,
+  useEffect(() => {
+    Promise.all([getAllStateBrazilData(), getCountryData("brazil")]).then(
+      ([statesData, countryData]) => {
+        setDataStates(statesData.sort((a, b) => a.state - b.state));
+        setSelectedState(statesData[4]);
+        setDataBrazil(countryData);
+      }
+    );
+  }, []);
+
+  const onSelect = (index) => {
+    setSelectedState({ ...dataStates[index] });
   };
 
   return (
     <Container>
-      <Dropdown selected="Ceará" />
-      <InfoCard data={dataCeara} />
+      {Header && <Header />}
+      <DropdownStates
+        selected={selectedState}
+        items={dataStates}
+        onSelectedItem={onSelect}
+      />
+      <InfoCard data={selectedState} />
+      {/* <Text>Última atualização: {selectedState.datetime}</Text> */}
 
       <HorizontalLine />
+      <ContainerText>
+        <Text onPress={() => navigation.openDrawer()}>Situação no Brasil</Text>
+      </ContainerText>
+      <InfoCard data={dataBrazil} type={TYPES.COUNTRY} />
 
-      <Dropdown selected="Brasil" />
-      <InfoCard data={dataBrasil} />
+      {/* <Text>Última atualização: {dataBrazil.updated_at}</Text> */}
     </Container>
   );
 };

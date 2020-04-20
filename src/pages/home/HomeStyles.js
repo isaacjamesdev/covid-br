@@ -13,10 +13,19 @@ export const HorizontalLine = styled.View`
   height: 0;
 `;
 
+export const ContainerText = styled.View`
+  background-color: #000;
+  border: 0.4px solid #ccc;
+  border-radius: 10px;
+  width: 90%;
+  margin: 10px auto;
+  height: 40px;
+`;
+
 export const Text = styled.Text`
-  color: #fff;
-  font-size: 16px;
-  margin: 6px 0;
+  color: #ccc;
+  font-size: 18px;
+  margin: auto auto;
 `;
 
 export const SubmitButton = styled(RectButton)`

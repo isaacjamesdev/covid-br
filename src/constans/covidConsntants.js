@@ -11,3 +11,8 @@ export const COLORS = {
   RED: "red",
   GRAY: "gray",
 };
+
+export const TYPES = {
+  COUNTRY: "COUNTRY",
+  STATE: "STATE",
+};

@@ -1,12 +1,30 @@
 import React from "react";
-import { DropdownContainer, Text } from "./Dropdown.style";
+import { AntDesign } from "@expo/vector-icons";
+import { DropdownContainer, MyPicker, IconContainer } from "./Dropdown.style";
 
-const Dropdown = ({ selected }) => {
+const DropdownStates = ({ selected, items = [], onSelectedItem }) => {
   return (
     <DropdownContainer>
-      <Text>{selected}</Text>
+      <MyPicker
+        selectedValue={selected}
+        onValueChange={(itemValueIndex) => onSelectedItem(itemValueIndex)}
+        mode="dropdown"
+      >
+        {selected.state && (
+          <MyPicker.Item color="#ccc" label={selected.state} />
+        )}
+        {items.map(
+          (item, idx) =>
+            item.uid !== selected.uid && (
+              <MyPicker.Item key={idx} label={item.state} value={idx} />
+            )
+        )}
+      </MyPicker>
+      <IconContainer>
+        <AntDesign name="downcircleo" size={20} color="#ccc" />
+      </IconContainer>
     </DropdownContainer>
   );
 };
 
-export default Dropdown;
+export default DropdownStates;
