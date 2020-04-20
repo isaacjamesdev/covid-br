@@ -6,7 +6,11 @@ import {
   InfoContainer,
   TextHeader,
   TextBody,
+  ContactContainer,
+  ContactIconDiv,
 } from "./About.style";
+
+import { AntDesign, MaterialIcons } from "@expo/vector-icons";
 
 const About = ({ route }) => {
   const { Header } = route.params;
@@ -25,12 +29,24 @@ const About = ({ route }) => {
           Equipe que disponibiliza a API covid19-brazil-api.now.sh/
         </TextBody>
         <TextBody>
-          Toda a comunidade de desenvolvedores, em especial React, e amigos que
-          contribuíram direta e indiretamente para os meus conhecimentos.
+          Toda a comunidade de desenvolvedores, em especial comunidade React,
+          amigos que contribuíram direta e indiretamente para os meus
+          conhecimentos.
         </TextBody>
+
         <TextHeader>Contato:</TextHeader>
-        <TextBody>Email: isaacjamesdev@gmail.com</TextBody>
-        <TextBody>Linkedin:.linkedin.com/in/isaacjamesdev/</TextBody>
+        <ContactContainer>
+          <ContactIconDiv>
+            <MaterialIcons name="email" size={20} color="#ccc" />
+          </ContactIconDiv>
+          <TextBody italic>isaacjamesdev@gmail.com</TextBody>
+        </ContactContainer>
+        <ContactContainer>
+          <ContactIconDiv>
+            <AntDesign name="linkedin-square" size={20} color="#ccc" />
+          </ContactIconDiv>
+          <TextBody italic>linkedin.com/in/isaacjamesdev/</TextBody>
+        </ContactContainer>
       </InfoContainer>
     </Container>
   );
