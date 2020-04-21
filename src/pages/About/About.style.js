@@ -15,14 +15,14 @@ export const InfoContainer = styled.View`
 `;
 
 export const TextHeader = styled.Text`
-  color: #ccc;
+  color: #999;
   font-size: 18;
   margin: 10px auto 0 auto;
   font-weight: bold;
 `;
 
 export const TextBody = styled.Text`
-  color: #ccc;
+  color: #999;
   font-size: 16;
   margin: 10px 0;
   font-style: ${({ italic }) => (italic ? "italic" : "normal")};

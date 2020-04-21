@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const DropdownContainer = styled.View`
   padding: 0 5px;
   background-color: #000;
-  border: 0.4px solid #ccc;
+  border: 0.4px solid #999;
   border-radius: 10px;
   width: 90%;
   margin: 10px auto;
@@ -13,7 +13,7 @@ export const DropdownContainer = styled.View`
 
 export const Text = styled.Text`
   align-self: center;
-  color: #ccc;
+  color: #999;
   font-size: 18px;
   margin: 6px 0;
 `;

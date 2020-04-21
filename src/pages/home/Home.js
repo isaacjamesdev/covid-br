@@ -68,7 +68,7 @@ const Home = ({ navigation, route }) => {
       <InfoText>Atualizado em: {getDate()}</InfoText>
       <HorizontalLine />
 
-      {loading && <ActivityIndicator size="large" color="#ccc" />}
+      {loading && <ActivityIndicator size="large" color="#999" />}
 
       <ContainerText>
         <Text onPress={() => navigation.openDrawer()}>Situação no Brasil</Text>

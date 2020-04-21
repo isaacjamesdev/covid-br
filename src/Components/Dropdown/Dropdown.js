@@ -11,7 +11,7 @@ const DropdownStates = ({ selected, items = [], onSelectedItem }) => {
         mode="dropdown"
       >
         {selected.state && (
-          <MyPicker.Item color="#ccc" label={selected.state} />
+          <MyPicker.Item color="#999" label={selected.state} />
         )}
         {items.map(
           (item, idx) =>
@@ -21,7 +21,7 @@ const DropdownStates = ({ selected, items = [], onSelectedItem }) => {
         )}
       </MyPicker>
       <IconContainer>
-        <AntDesign name="downcircleo" size={20} color="#ccc" />
+        <AntDesign name="downcircleo" size={20} color="#999" />
       </IconContainer>
     </DropdownContainer>
   );

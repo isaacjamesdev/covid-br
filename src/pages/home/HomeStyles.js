@@ -15,7 +15,7 @@ export const HorizontalLine = styled.View`
 
 export const ContainerText = styled.View`
   background-color: #000;
-  border: 0.4px solid #ccc;
+  border: 0.4px solid #999;
   border-radius: 10px;
   width: 90%;
   margin: 10px auto;
@@ -23,7 +23,7 @@ export const ContainerText = styled.View`
 `;
 
 export const Text = styled.Text`
-  color: #ccc;
+  color: #999;
   font-size: 18px;
   margin: auto auto;
 `;
@@ -40,7 +40,7 @@ export const SubmitButton = styled(RectButton)`
 
 export const Name = styled.Text`
   font-size: 14px;
-  color: #ccc;
+  color: #999;
   font-weight: bold;
   margin-top: 4px;
   text-align: center;
@@ -48,7 +48,7 @@ export const Name = styled.Text`
 
 export const InfoText =  styled.Text`
   font-size: 14px;
-  color: #ccc;
+  color: #999;
   padding: 5px 15px 0 15px;
   font-style: italic;
 `;

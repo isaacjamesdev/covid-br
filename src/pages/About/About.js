@@ -37,13 +37,13 @@ const About = ({ route }) => {
         <TextHeader>Contato:</TextHeader>
         <ContactContainer>
           <ContactIconDiv>
-            <MaterialIcons name="email" size={20} color="#ccc" />
+            <MaterialIcons name="email" size={20} color="#999" />
           </ContactIconDiv>
           <TextBody italic>isaacjamesdev@gmail.com</TextBody>
         </ContactContainer>
         <ContactContainer>
           <ContactIconDiv>
-            <AntDesign name="linkedin-square" size={20} color="#ccc" />
+            <AntDesign name="linkedin-square" size={20} color="#999" />
           </ContactIconDiv>
           <TextBody italic>linkedin.com/in/isaacjamesdev/</TextBody>
         </ContactContainer>
