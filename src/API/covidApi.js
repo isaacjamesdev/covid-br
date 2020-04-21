@@ -17,5 +17,7 @@ export const getCountryData = (country) =>
 
 export const getAllStateBrazilData = () =>
   Axios.get()
-    .then((response) => response.data.data)
+    .then((response) =>
+      response.data.data.sort((a, b) => a.state.localeCompare(b.state))
+    )
     .catch((err) => console.log("deu ruim", err));

@@ -21,5 +21,3 @@ export const Text = styled.Text`
   font-size: 18px;
   margin: 6px 5px;
 `;
-
-
