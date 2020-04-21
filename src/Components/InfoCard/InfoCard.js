@@ -14,24 +14,40 @@ const InfoCard = ({ data = {}, type }) => {
         }
       : data;
 
-  const renderInformation = (status, info, color) => (
+  const renderInformation = (status, info, color, iconName) => (
     <InfoContainer>
       <Text>{emptyOrNull(status)}</Text>
-      <Status info={info} color={color} />
+      <Status info={info} color={color} iconName={iconName} />
     </InfoContainer>
   );
   return (
     <Container>
-      {renderInformation(STATUS.CONFIRMADOS, formatedData.cases, COLORS.YELLOW)}
+      {renderInformation(
+        STATUS.CONFIRMADOS,
+        formatedData.cases,
+        COLORS.YELLOW,
+        "hospital"
+      )}
       {formatedData.suspects
         ? renderInformation(
             STATUS.SUSPEITOS,
             formatedData.suspects,
-            COLORS.GRAY
+            COLORS.GRAY,
+            "microscope"
           )
         : null}
-      {renderInformation(STATUS.CURADOS, formatedData.refuses, COLORS.GREEN)}
-      {renderInformation(STATUS.MORTES, formatedData.deaths, COLORS.RED)}
+      {renderInformation(
+        STATUS.CURADOS,
+        formatedData.refuses,
+        COLORS.GREEN,
+        "heart"
+      )}
+      {renderInformation(
+        STATUS.MORTES,
+        formatedData.deaths,
+        COLORS.RED,
+        "skull"
+      )}
     </Container>
   );
 };

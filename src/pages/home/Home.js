@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Container, HorizontalLine, Text, ContainerText } from "./HomeStyles";
+import {
+  Container,
+  HorizontalLine,
+  Text,
+  ContainerText,
+  InfoText,
+} from "./HomeStyles";
 import { getAllStateBrazilData, getCountryData } from "../../API/covidApi";
 import { TYPES } from "../../constans/covidConsntants";
 import DropdownStates from "../../Components/Dropdown/Dropdown";
@@ -35,12 +41,15 @@ const Home = ({ navigation, route }) => {
       />
       <InfoCard data={selectedState} />
       {/* <Text>Última atualização: {selectedState.datetime}</Text> */}
-
+      <InfoText>Atualizado em: 20/04/2020 às 20:45</InfoText>
       <HorizontalLine />
+
       <ContainerText>
         <Text onPress={() => navigation.openDrawer()}>Situação no Brasil</Text>
       </ContainerText>
       <InfoCard data={dataBrazil} type={TYPES.COUNTRY} />
+      <InfoText>Atualizado em: 20/04/2020 às 20:45</InfoText>
+      <HorizontalLine />
 
       {/* <Text>Última atualização: {dataBrazil.updated_at}</Text> */}
     </Container>

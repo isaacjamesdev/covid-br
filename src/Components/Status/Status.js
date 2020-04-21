@@ -1,15 +1,14 @@
 import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { FontAwesome5,  } from "@expo/vector-icons";
 import { Text } from "./Status.styled";
 import { emptyOrNull } from "../../utils/stringUtil";
 
-const Status = ({ info, color }) => {
+const Status = ({ info, color, iconName }) => {
   return (
     <Text>
       {emptyOrNull(info)}{" "}
-      <MaterialCommunityIcons name="cube-outline" size={18} color={color} />
+      <FontAwesome5 name={iconName} size={18} color={color} solid />
     </Text>
   );
 };
-
 export default Status;

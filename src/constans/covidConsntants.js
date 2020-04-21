@@ -10,6 +10,7 @@ export const COLORS = {
   YELLOW: "yellow",
   RED: "red",
   GRAY: "gray",
+  BLUE: "blue",
 };
 
 export const TYPES = {

@@ -13,7 +13,7 @@ export const DropdownContainer = styled.View`
 
 export const Text = styled.Text`
   align-self: center;
-  color: #fff;
+  color: #ccc;
   font-size: 18px;
   margin: 6px 0;
 `;

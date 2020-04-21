@@ -40,8 +40,15 @@ export const SubmitButton = styled(RectButton)`
 
 export const Name = styled.Text`
   font-size: 14px;
-  color: #fff;
+  color: #ccc;
   font-weight: bold;
   margin-top: 4px;
   text-align: center;
+`;
+
+export const InfoText =  styled.Text`
+  font-size: 14px;
+  color: #ccc;
+  padding: 5px 15px 0 15px;
+  font-style: italic;
 `;
