@@ -1,4 +1,5 @@
 import React from "react";
+import { View } from "react-native";
 import { Container, InfoContainer, Text } from "./InfoCard.style";
 import Status from "../Status/Status";
 import { STATUS, COLORS, TYPES } from "../../constans/covidConsntants";
@@ -16,10 +17,13 @@ const InfoCard = ({ data = {}, type }) => {
       : data;
 
   const renderInformation = (status, info, color, iconName) => (
-    <InfoContainer>
-      <Text>{emptyOrNull(status)}</Text>
-      <Status info={info} color={color} iconName={iconName} />
-    </InfoContainer>
+    <View>
+      <InfoContainer>
+        <Text>{emptyOrNull(status)}</Text>
+        <Status info={info} color={color} iconName={iconName} />
+      </InfoContainer>
+      <HorizontalLine />
+    </View>
   );
   return (
     <Container>

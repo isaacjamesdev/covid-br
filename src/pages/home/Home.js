@@ -65,7 +65,7 @@ const Home = ({ navigation, route }) => {
       <InfoText style={{ marginBottom: 5 }}>
         Atualizado em: {getDate()}
       </InfoText>
-      <HorizontalLine />
+      {/* <HorizontalLine /> */}
 
       <ContainerText>
         <Text onPress={() => navigation.openDrawer()}>Situação no Brasil</Text>
@@ -74,7 +74,7 @@ const Home = ({ navigation, route }) => {
       <InfoText style={{ marginBottom: 5 }}>
         Atualizado em: {getDate(true)}
       </InfoText>
-      <HorizontalLine />
+      {/* <HorizontalLine /> */}
       <View
         style={{
           marginTop: 40,

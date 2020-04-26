@@ -7,7 +7,7 @@ export const Container = styled.View`
 `;
 
 export const InfoContainer = styled.View`
-  border: 0.15px solid #fff;
+  /* border: 0.15px solid #bfbfbf; */
   flex-direction: row;
   justify-content: space-between;
   margin: 5px 0;
@@ -16,7 +16,7 @@ export const InfoContainer = styled.View`
 `;
 
 export const Text = styled.Text`
-  color: #ccc;
+  color: #bfbfbf;
   font-size: 18px;
   margin: 6px 5px;
 `;

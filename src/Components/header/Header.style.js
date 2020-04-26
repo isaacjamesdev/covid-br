@@ -10,7 +10,7 @@ export const HeaderContainer = styled.View`
 `;
 
 export const Text = styled.Text`
-  color: #ccc;
+  color: #bfbfbf;
   margin: auto auto;
   font-size: 18px;
   font-weight: 600;
@@ -21,7 +21,7 @@ export const Text = styled.Text`
 export const MenuBtn = styled(Feather).attrs((props) => ({
   name: props.open ? "x" : "menu",
   size: 25,
-  color: "#fff",
+  color: "#bfbfbf",
 }))`
   /* margin-left: 5px; */
 `;

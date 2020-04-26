@@ -15,8 +15,8 @@ const navigationTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: "#fff",
-    text: "#fff",
+    primary: "#bfbfbf",
+    text: "#bfbfbf",
     background: "#151b1e",
     card: "#151b1e",
   },

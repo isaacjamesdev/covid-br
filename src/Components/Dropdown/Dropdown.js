@@ -38,9 +38,9 @@ const Dropdown = ({ selected, items = [], onSelectedItem, loading }) => {
             <Text>{selected.state}</Text>
             <View>
               {loading ? (
-                <ActivityIndicator color="#ccc" />
+                <ActivityIndicator color="#bfbfbf" />
               ) : (
-                <AntDesign name="downcircleo" size={20} color="#ccc" />
+                <AntDesign name="downcircleo" size={20} color="#bfbfbf" />
               )}
             </View>
           </ItemContainer>
@@ -56,7 +56,7 @@ const Dropdown = ({ selected, items = [], onSelectedItem, loading }) => {
               hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
             >
               <View>
-                <AntDesign name="closecircleo" size={20} color="#ccc" />
+                <AntDesign name="closecircleo" size={20} color="#bfbfbf" />
               </View>
             </TouchableOpacity>
           </ItemContainer>
