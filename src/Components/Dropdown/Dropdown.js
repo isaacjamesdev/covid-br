@@ -1,30 +1,67 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { View, TouchableOpacity, TouchableHighlight } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { DropdownContainer, MyPicker, IconContainer } from "./Dropdown.style";
+import { BoxContainer, List, Text, ItemContainer } from "./Dropdown.style";
+import Modal from "../modal/Modal";
+import StateItem from "./StateItem";
+import useToggle from "../../hooks/UseToggle";
+import { ActivityIndicator } from "react-native";
 
-const DropdownStates = ({ selected, items = [], onSelectedItem }) => {
+const Dropdown = ({ selected, items = [], onSelectedItem, loading }) => {
+  const [showModal, toggleShowModal] = useToggle(false);
+
+  const onSelect = (item) => {
+    onSelectedItem(item);
+    toggleShowModal();
+  };
+
+  const MemoList = useMemo(
+    () =>
+      items.length ? (
+        <List
+          className={showModal ? "active" : ""}
+          data={items}
+          keyExtractor={(item) => item.uid}
+          renderItem={({ item }) => (
+            <StateItem item={item} onPress={onSelect} />
+          )}
+        />
+      ) : null,
+    [items, showModal]
+  );
+
   return (
-    <DropdownContainer>
-      <MyPicker
-        selectedValue={selected}
-        onValueChange={(itemValueIndex) => onSelectedItem(itemValueIndex)}
-        mode="dropdown"
-      >
-        {selected.state && (
-          <MyPicker.Item color="#999" label={selected.state} />
-        )}
-        {items.map(
-          (item, idx) =>
-            item.uid !== selected.uid && (
-              <MyPicker.Item key={idx} label={item.state} value={idx} />
-            )
-        )}
-      </MyPicker>
-      <IconContainer>
-        <AntDesign name="downcircleo" size={20} color="#999" />
-      </IconContainer>
-    </DropdownContainer>
+    <View>
+      <BoxContainer>
+        <TouchableOpacity onPress={toggleShowModal} disabled={loading}>
+          <ItemContainer>
+            <Text>{selected.state}</Text>
+            <View>
+              {loading ? (
+                <ActivityIndicator color="#999" />
+              ) : (
+                <AntDesign name="downcircleo" size={20} color="#999" />
+              )}
+            </View>
+          </ItemContainer>
+        </TouchableOpacity>
+      </BoxContainer>
+
+      <View>
+        <Modal show={showModal}>
+          <ItemContainer>
+            <Text className="selected">Selecione um estado</Text>
+            <TouchableOpacity onPress={toggleShowModal}>
+              <View>
+                <AntDesign name="closecircleo" size={20} color="#999" />
+              </View>
+            </TouchableOpacity>
+          </ItemContainer>
+          {MemoList}
+        </Modal>
+      </View>
+    </View>
   );
 };
 
-export default DropdownStates;
+export default Dropdown;

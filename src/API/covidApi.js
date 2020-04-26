@@ -2,8 +2,8 @@ import Axios from "axios";
 
 Axios.defaults.baseURL = "https://covid19-brazil-api.now.sh/api/report/v1";
 
-// get img
-// https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/CE.png
+export const getUriImage = (uf) =>
+  `https://devarthurribeiro.github.io/covid19-brazil-api/static/flags/${uf.toUpperCase()}.png`;
 
 export const getStateData = (uf) =>
   Axios.get("/brazil/uf/" + uf)

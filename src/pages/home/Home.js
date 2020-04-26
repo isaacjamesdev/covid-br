@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { ActivityIndicator } from "react-native";
 import {
   Container,
   HorizontalLine,
@@ -9,7 +8,7 @@ import {
 } from "./HomeStyles";
 import { getAllStateBrazilData, getCountryData } from "../../API/covidApi";
 import { TYPES } from "../../constans/covidConsntants";
-import DropdownStates from "../../Components/Dropdown/Dropdown";
+import Dropdown from "../../Components/Dropdown/Dropdown";
 import InfoCard from "../../Components/InfoCard/InfoCard";
 
 const Home = ({ navigation, route }) => {
@@ -32,12 +31,12 @@ const Home = ({ navigation, route }) => {
       .catch(() => setLoading(false));
   }, []);
 
-  const onSelect = (index) => {
+  const onSelect = (item) => {
     setLoading(true);
     setTimeout(() => {
-      setSelectedState({ ...dataStates[index] });
+      setSelectedState(item);
       setLoading(false);
-    }, 150);
+    }, 100);
   };
 
   const formatDate = (date) => {
@@ -58,17 +57,17 @@ const Home = ({ navigation, route }) => {
   return (
     <Container>
       {Header && <Header />}
-      <DropdownStates
+      <Dropdown
         selected={selectedState}
         items={dataStates}
         onSelectedItem={onSelect}
+        loading={loading}
       />
+
       <InfoCard data={selectedState} />
 
       <InfoText>Atualizado em: {getDate()}</InfoText>
       <HorizontalLine />
-
-      {loading && <ActivityIndicator size="large" color="#999" />}
 
       <ContainerText>
         <Text onPress={() => navigation.openDrawer()}>Situação no Brasil</Text>
