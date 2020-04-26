@@ -38,9 +38,9 @@ const Dropdown = ({ selected, items = [], onSelectedItem, loading }) => {
             <Text>{selected.state}</Text>
             <View>
               {loading ? (
-                <ActivityIndicator color="#999" />
+                <ActivityIndicator color="#ccc" />
               ) : (
-                <AntDesign name="downcircleo" size={20} color="#999" />
+                <AntDesign name="downcircleo" size={20} color="#ccc" />
               )}
             </View>
           </ItemContainer>
@@ -51,9 +51,12 @@ const Dropdown = ({ selected, items = [], onSelectedItem, loading }) => {
         <Modal show={showModal}>
           <ItemContainer>
             <Text className="selected">Selecione um estado</Text>
-            <TouchableOpacity onPress={toggleShowModal}>
+            <TouchableOpacity
+              onPress={toggleShowModal}
+              hitSlop={{ top: 20, bottom: 20, left: 20, right: 20 }}
+            >
               <View>
-                <AntDesign name="closecircleo" size={20} color="#999" />
+                <AntDesign name="closecircleo" size={20} color="#ccc" />
               </View>
             </TouchableOpacity>
           </ItemContainer>

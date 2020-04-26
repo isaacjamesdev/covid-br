@@ -1,7 +1,8 @@
 import React from "react";
 import { TouchableOpacity, View } from "react-native";
-import { Img, Text, ItemContainer, HorizontalLine } from "./Dropdown.style";
+import { Img, Text, ItemContainer } from "./Dropdown.style";
 import { getUriImage } from "../../API/covidApi";
+import { HorizontalLine } from "../common/HorizontalLine";
 
 const StateItem = ({ item, onPress }) => {
   return (

@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  HorizontalLine,
-  Text,
-  ContainerText,
-  InfoText,
-} from "./HomeStyles";
+import { Container, Text, ContainerText, InfoText } from "./HomeStyles";
 import { getAllStateBrazilData, getCountryData } from "../../API/covidApi";
 import { TYPES } from "../../constans/covidConsntants";
 import Dropdown from "../../Components/Dropdown/Dropdown";
 import InfoCard from "../../Components/InfoCard/InfoCard";
+import { HorizontalLine } from "../../Components/common/HorizontalLine";
+import { View } from "react-native";
 
 const Home = ({ navigation, route }) => {
   const [loading, setLoading] = useState(true);
@@ -66,18 +62,33 @@ const Home = ({ navigation, route }) => {
 
       <InfoCard data={selectedState} />
 
-      <InfoText>Atualizado em: {getDate()}</InfoText>
+      <InfoText style={{ marginBottom: 5 }}>
+        Atualizado em: {getDate()}
+      </InfoText>
       <HorizontalLine />
 
       <ContainerText>
         <Text onPress={() => navigation.openDrawer()}>Situação no Brasil</Text>
       </ContainerText>
       <InfoCard data={dataBrazil} type={TYPES.COUNTRY} />
-      <InfoText>Atualizado em: {getDate(true)}</InfoText>
-      <HorizontalLine />
-      <InfoText style={{ alignSelf: "center", fontSize: 13 }}>
-        Fonte: covid19-brazil-api-docs.now.sh/
+      <InfoText style={{ marginBottom: 5 }}>
+        Atualizado em: {getDate(true)}
       </InfoText>
+      <HorizontalLine />
+      <View
+        style={{
+          marginTop: 40,
+        }}
+      >
+        <InfoText
+          style={{
+            alignSelf: "center",
+            fontSize: 13,
+          }}
+        >
+          Fonte: covid19-brazil-api-docs.now.sh/
+        </InfoText>
+      </View>
     </Container>
   );
 };

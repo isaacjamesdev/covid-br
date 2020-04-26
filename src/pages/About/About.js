@@ -21,6 +21,8 @@ const About = ({ route }) => {
         <Logo source={require("../../../assets/icon.png")} width={50} />
       </LogoContainer>
       <InfoContainer>
+        <TextHeader>Desenvolvido por:</TextHeader>
+        <TextBody>Isaac James</TextBody>
         <TextHeader>Covid BR – Status da pandemia no Brasil</TextHeader>
         <TextBody>Versão: 1.0.0</TextBody>
 
@@ -37,13 +39,13 @@ const About = ({ route }) => {
         <TextHeader>Contato:</TextHeader>
         <ContactContainer>
           <ContactIconDiv>
-            <MaterialIcons name="email" size={20} color="#999" />
+            <MaterialIcons name="email" size={20} color="#fff" />
           </ContactIconDiv>
           <TextBody italic>isaacjamesdev@gmail.com</TextBody>
         </ContactContainer>
         <ContactContainer>
           <ContactIconDiv>
-            <AntDesign name="linkedin-square" size={20} color="#999" />
+            <AntDesign name="linkedin-square" size={20} color="#fff" />
           </ContactIconDiv>
           <TextBody italic>linkedin.com/in/isaacjamesdev/</TextBody>
         </ContactContainer>

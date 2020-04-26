@@ -15,10 +15,10 @@ const navigationTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: "#999",
-    text: "#999",
-    background: "#000",
-    card: "#000",
+    primary: "#fff",
+    text: "#fff",
+    background: "#151b1e",
+    card: "#151b1e",
   },
 };
 

@@ -3,26 +3,20 @@ import { FlatList } from "react-native";
 
 export const BoxContainer = styled.View`
   padding: 0 5px;
-  background-color: #000;
-  border: 0.4px solid #999;
+  background-color: #151b1e;
+  border: 0.4px solid #fff;
   border-radius: 10px;
   width: 90%;
   margin: 10px auto;
 `;
 
 export const Text = styled.Text`
-  color: #999;
+  color: #ccc;
   font-size: 18px;
   font-size: ${(props) => (props.className === "selected" ? "20px" : "18px")};
 
   font-weight: ${(props) =>
     props.className === "selected" ? "bold" : "normal"};
-`;
-
-export const HorizontalLine = styled.View`
-  border: 0.25px solid white;
-  height: 0;
-  opacity: 0.2;
 `;
 
 export const List = styled(FlatList)`
@@ -44,7 +38,7 @@ export const ItemContainer = styled.View`
 `;
 
 export const Img = styled.Image`
-  background-color: #999;
+  background-color: #fff;
   width: 20px;
   height: 20px;
   margin-left: 10px;

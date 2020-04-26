@@ -3,14 +3,14 @@ import { Feather } from "@expo/vector-icons";
 
 export const HeaderContainer = styled.View`
   height: 7%;
-  background-color: #000;
+  background-color: #151b1e;
   align-items: center;
   flex-direction: row;
   padding: 10px 15px;
 `;
 
 export const Text = styled.Text`
-  color: #999;
+  color: #ccc;
   margin: auto auto;
   font-size: 18px;
   font-weight: 600;
@@ -21,7 +21,7 @@ export const Text = styled.Text`
 export const MenuBtn = styled(Feather).attrs((props) => ({
   name: props.open ? "x" : "menu",
   size: 25,
-  color: "#999",
+  color: "#fff",
 }))`
   /* margin-left: 5px; */
 `;

@@ -3,6 +3,7 @@ import { Container, InfoContainer, Text } from "./InfoCard.style";
 import Status from "../Status/Status";
 import { STATUS, COLORS, TYPES } from "../../constans/covidConsntants";
 import { emptyOrNull } from "../../utils/stringUtil";
+import { HorizontalLine } from "../common/HorizontalLine";
 
 const InfoCard = ({ data = {}, type }) => {
   const formatedData =

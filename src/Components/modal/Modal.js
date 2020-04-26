@@ -19,8 +19,8 @@ const Modal = ({ children, show, ...props }) => {
 
 const styles = StyleSheet.create({
   modalView: {
-    backgroundColor: "white",
-    opacity: 0.9,
+    backgroundColor: "#282828",
+    // opacity: 0.9,
     borderRadius: 10,
     alignSelf: "center",
     marginTop: "auto",
