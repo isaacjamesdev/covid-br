@@ -11,6 +11,7 @@ import {
 } from "./About.style";
 
 import { AntDesign, MaterialIcons } from "@expo/vector-icons";
+import { HorizontalLine } from "../../Components/common/HorizontalLine";
 
 const About = ({ route }) => {
   const { Header } = route.params;
@@ -22,10 +23,11 @@ const About = ({ route }) => {
       </LogoContainer>
       <InfoContainer>
         <TextHeader>Desenvolvido por:</TextHeader>
-        <TextBody>Isaac James</TextBody>
-        <TextHeader>Covid BR – Status da pandemia no Brasil</TextHeader>
+        <TextBody>Isaac James - Engenheiro de software</TextBody>
+        <HorizontalLine />
+        <TextHeader>Covid-19 Brasil – Status da pandemia no Brasil</TextHeader>
         <TextBody>Versão: 1.0.0</TextBody>
-
+        <HorizontalLine />
         <TextHeader>Agradecimentos:</TextHeader>
         <TextBody>
           Equipe que disponibiliza a API covid19-brazil-api.now.sh/
